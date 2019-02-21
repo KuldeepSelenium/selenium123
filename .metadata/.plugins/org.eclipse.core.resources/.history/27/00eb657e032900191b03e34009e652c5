@@ -1,0 +1,9 @@
+package com.edureka.com;
+
+public class firstAssignment {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

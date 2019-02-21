@@ -1,0 +1,52 @@
+package ModuleTESTNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+
+public class TestDemo {
+
+	WebDriver driver;
+	
+	@BeforeTest
+	public void foo() {
+		System.out.println("in Fooo");
+	}
+
+	@Test
+	public void f() throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\\\Edureka_Selenium\\\\ExEFiles\\\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		
+		driver.get("https://www.seleniumeasy.com/test/javascript-alert-box-demo.html");
+		
+		driver.findElement(By.xpath("//*[@class='btn btn-default btn-lg' and contains(text(),'Click for Prompt Box')]")).click();
+
+		Alert PA = driver.switchTo().alert();
+		
+		PA.dismiss();
+	}
+	
+	@AfterTest
+	public void close() {
+		try {
+			driver.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

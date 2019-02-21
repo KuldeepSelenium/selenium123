@@ -1,0 +1,25 @@
+package com.edureka.com;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testCaseNaukri {
+
+	public static void main(String[] args) {
+		//Initialize browser
+		System.setProperty("WebDriver.chrome.driver", "D:\\\\Edureka_Selenium\\\\ExEFiles\\\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.naukri.com/");
+		
+		driver.findElement(By.linkText("Walk-in Jobs")).click();
+		
+		String getPage = driver.getCurrentUrl();
+		System.out.println(getPage);
+		
+		driver.close();
+	}
+
+}

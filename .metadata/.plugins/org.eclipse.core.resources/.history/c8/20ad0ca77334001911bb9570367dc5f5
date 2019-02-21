@@ -1,0 +1,9 @@
+package module6;
+
+import org.testng.annotations.Test;
+
+public class childWindowAction {
+  @Test
+  public void f() {
+  }
+}

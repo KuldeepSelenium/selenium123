@@ -1,0 +1,25 @@
+package com.edureka.com;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class firstAssignment {
+
+	public static void main(String[] args) {
+		
+		
+		//Instantiate the browser
+		System.setProperty("webDriver.chrome.driver", "D:\\Edureka_Selenium\\ExEFiles\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+
+		//Get URL
+		driver.get("https://learning.edureka.co");
+		
+		//
+		driver.findElement(By.xpath("//*[contains(@placeholder,'Search for a skill you wish to master')")).sendKeys("Selenium");
+	}
+
+}

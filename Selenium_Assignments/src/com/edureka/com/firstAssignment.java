@@ -1,0 +1,30 @@
+package com.edureka.com;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class firstAssignment {
+
+	public static void main(String[] args) {
+
+		try {
+			// Instantiate the browser
+			System.setProperty("webDriver.chrome.driver", "D:\\Edureka_Selenium\\ExEFiles\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+			driver.manage().deleteAllCookies();
+			driver.manage().window().maximize();
+
+			// Get URL
+			driver.get("https://www.edureka.co");
+			String e = driver.getTitle();
+			System.out.println(e);
+			
+						Thread.sleep(3000);
+			driver.findElement(By.id("search-inp")).sendKeys("Selenium");
+			driver.findElement(By.linkText("Log In")).click();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+	}
+}
